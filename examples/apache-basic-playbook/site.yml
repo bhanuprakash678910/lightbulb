@@ -3,14 +3,14 @@
   hosts: web
   become: yes
   tasks:
-    - name: Ensure httpd packages are present
+    - name: Ensure apache2 packages are present
       yum:
-        name: httpd
+        name: apache2
         state: present
         update_cache: yes
       notify: restart-apache-service
   handlers:
     - name: restart-apache-service
       service:
-        name: httpd
+        name: apache2
         state: restarted
