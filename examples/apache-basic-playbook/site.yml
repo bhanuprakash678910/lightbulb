@@ -7,6 +7,7 @@
       yum:
         name: httpd
         state: present
+        update_cache: yes
       notify: restart-apache-service
   handlers:
     - name: restart-apache-service
