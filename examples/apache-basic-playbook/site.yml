@@ -4,13 +4,9 @@
   become: yes
   tasks:
     - name: Ensure apache2 packages are present
-      yum:
+      apt:
         name: apache2
         state: present
         update_cache: yes
-      notify: restart-apache-service
-  handlers:
-    - name: restart-apache-service
-      service:
-        name: apache2
-        state: restarted
+
+  
